@@ -54,9 +54,6 @@ class JitGRUCell(jit.ScriptModule):
         x_results = torch.mm(x, self.weight_ih.t()) + self.bias_ih
         h_results = torch.mm(hidden, self.weight_hh.t()) + self.bias_hh
 
-        x_results = x_results.squeeze()
-        h_results = h_results.squeeze()
-
         i_r, i_z, i_n = x_results.chunk(3, 1)
         h_r, h_z, h_n = h_results.chunk(3, 1)
 
@@ -207,6 +204,8 @@ def test_script_stacked_gru(seq_len, batch, input_size, hidden_size,
 if __name__ == '__main__':
     print('Testing layers...')
     test_script_gru_layer(5, 2, 3, 7)
+    test_script_gru_layer(1, 1, 1, 1)
     print('Testing stacked GRUs...')
     test_script_stacked_gru(5, 2, 3, 7, 10)
+    test_script_stacked_gru(1, 1, 1, 1, 1)
     print('All unit tests passed!')
