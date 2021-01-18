@@ -12,6 +12,34 @@ How to use
 ---
 I've implemented equivalents of `torch.nn.GRUCell` and `torch.nn.GRU`. Look at the test cases that I've included in the implementation. Those should help you get started.
 
+Sample Project
+---
+Checkout [DeepNAG](https://github.com/Maghoumi/DeepNAG), my non-adversarial sequence generator.
+I used this implementation in that project to show the merits of my novel method over a similar GAN implementation.
+
+
+Support/Citing
+---
+If you find our work useful, please consider starring this repository and citing our work:
+
+```
+@phdthesis{maghoumi2020dissertation,
+  title={{Deep Recurrent Networks for Gesture Recognition and Synthesis}},
+  author={Mehran Maghoumi},
+  year={2020},
+  school={University of Central Florida Orlando, Florida}
+}
+
+@misc{maghoumi2020deepnag,
+      title={{DeepNAG: Deep Non-Adversarial Gesture Generation}}, 
+      author={Mehran Maghoumi and Eugene M. Taranta II and Joseph J. LaViola Jr},
+      year={2020},
+      eprint={2011.09149},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
+
 Contribution
 ---
 I'm actively using this implementation, so contributions are greatly welcome as they help my work too. If you think you can improve this project, or implement something more efficiently, then feel free to submit pull requests!
