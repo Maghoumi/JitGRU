@@ -10,12 +10,22 @@ At the time of writing, PyTorch does not support second order derivatives for GR
 
 How to use
 ---
-I've implemented equivalents of `torch.nn.GRUCell` and `torch.nn.GRU`. Look at the test cases that I've included in the implementation. Those should help you get started.
+The main implementation is available in [jit_gru.py](https://github.com/Maghoumi/JitGRU/blob/master/jit_gru.py).
+I've implemented equivalents of `torch.nn.GRUCell` and `torch.nn.GRU` in that file. Look at the test cases that I've included in the implementation. Those should help you get started.
 
-Sample Project
+Bi-Directional GRUs
 ---
-Checkout [DeepNAG](https://github.com/Maghoumi/DeepNAG), my non-adversarial sequence generator.
-I used this implementation in that project to show the merits of my novel method over a similar GAN implementation.
+Support for bi-directional GRUs with variable input lengths was recently added (credits go to [@elixir-code](https://github.com/elixir-code)). This implementation is available separately in [jit_bigru.py](https://github.com/Maghoumi/JitGRU/blob/master/jit_bigru.py). See the included test cases in that file for example usage.
+
+Demo Project
+---
+Checkout [DeepNAG](https://github.com/Maghoumi/DeepNAG), which contains a GAN-based sequence generation model, as well as a non-adversarial sequence generator.
+The GAN-based sequence generator in the aforementioned repository is trained with the [improved Wasserstein GAN](https://github.com/caogang/wgan-gp) loss function, and relies on the code from this repository.
+
+<p align="center">
+  <img width="400" src="https://github.com/Maghoumi/DeepNAG/raw/master/images/kick.gif"/>
+  <img width="400" src="https://github.com/Maghoumi/DeepNAG/raw/master/images/uppercut.gif"/>
+</p>
 
 
 Support/Citing
